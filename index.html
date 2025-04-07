@@ -3,30 +3,397 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Hermanos Ceballos - Restaurante</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header class="bg-green-500 text-white text-center py-6">
-        <h1 class="text-4xl">Hola, soy JJ</h1>
-    </header>
-    <section class="max-w-lg mx-auto my-6 p-6 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold">Sobre mí</h2>
-        <p class="mt-2">Estoy aprendiendo diseño web para mis FCT en ForoEmpresarial. Me gusta crear páginas sencillas y funcionales.</p>
-        <button id="contactBtn" class="mt-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600">Contáctame</button>
+<body data-bs-theme="light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hermanos Ceballos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#opiniones">Opiniones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><button class="btn btn-dark ms-2" id="themeToggle"><i class="bi bi-moon-fill"></i></button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section text-center d-flex align-items-center">
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-4 fw-bold">Auténtico sabor casero desde 1995</h1>
+            <p class="lead mb-4">Descubre la verdadera esencia de la cocina tradicional</p>
+            <a href="#reservas" class="btn btn-primary btn-lg">Reserva tu mesa</a>
+        </div>
     </section>
 
-    <!-- Modal -->
-    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-        <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
-            <h3 class="text-xl font-bold mb-4">Contáctame</h3>
-            <p class="mb-2"><strong>Correo:</strong> jsjvmarquez@gmail.com</p>
-            <p class="mb-4"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jos%C3%A9-javier-m%C3%A1rquez-reche-311360307/" target="_blank" class="text-blue-500 hover:underline">Mi perfil de LinkedIn</a></p>
-            <button id="closeModalBtn" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Cerrar</button>
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="py-5">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-5">Nuestra Historia</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="https://placehold.co/600x400" alt="Equipo" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h3>Hermanos Ceballos</h3>
+                    <p>Fundado por los hermanos Paco, Alberto, Carlos y Pedro Ceballos en 1995, nuestro restaurante nació del sueño de compartir las recetas familiares heredadas de generación en generación.</p>
+                    <p>Nos especializamos en cocina tradicional con un toque moderno, manteniendo la esencia y el sabor de siempre.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Menú -->
+    <section id="menu" class="py-5 bg-light">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-5">Nuestro Menú</h2>
+            <ul class="nav nav-pills mb-4 justify-content-center" id="menuTabs">
+                <li class="nav-item"><button class="nav-link active" data-bs-toggle="pill" data-bs-target="#entrantesFrios">Entrantes Fríos</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#entrantes">Entrantes</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#carnes">Carnes</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#pescados">Pescados</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#vinos">Vinos</button></li>
+                <li class="nav-item"><button class="nav-link" data-bs-toggle="pill" data-bs-target="#postres">Postres</button></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="entrantesFrios">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="Jamón">
+                                <div class="card-body">
+                                    <h5 class="card-title">Jamón</h5>
+                                    <p class="card-text">Jamón ibérico de primera calidad</p>
+                                    <p class="card-text"><small class="text-muted">3.95€</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="Queso">
+                                <div class="card-body">
+                                    <h5 class="card-title">Queso</h5>
+                                    <p class="card-text">Selección de quesos curados</p>
+                                    <p class="card-text"><small class="text-muted">3.95€</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="Paté de la casa">
+                                <div class="card-body">
+                                    <h5 class="card-title">Paté de la casa</h5>
+                                    <p class="card-text">Paté casero con tostadas</p>
+                                    <p class="card-text"><small class="text-muted">3.75€</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="entrantes">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="Calamares">
+                                <div class="card-body">
+                                    <h5 class="card-title">Calamares</h5>
+                                    <p class="card-text">Calamares fritos</p>
+                                    <p class="card-text"><small class="text-muted">5.50€</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="Chocos">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chocos</h5>
+                                    <p class="card-text">Chocos fritos</p>
+                                    <p class="card-text"><small class="text-muted">6.50€</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="carnes">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="Pechuga de pollo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Pechuga de pollo</h5>
+                                    <p class="card-text">Pechuga de pollo a la plancha</p>
+                                    <p class="card-text"><small class="text-muted">4.25€</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="Solomillo de cerdo">
+                                <div class="card-body">
+                                    <h5 class="card-title">Solomillo de cerdo</h5>
+                                    <p class="card-text">Solomillo de cerdo a la plancha</p>
+                                    <p class="card-text"><small class="text-muted">4.50€</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pescados">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="Bacalao">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bacalao</h5>
+                                    <p class="card-text">Bacalao frito</p>
+                                    <p class="card-text"><small class="text-muted">3.75€</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="postres">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="Flan casero">
+                                <div class="card-body">
+                                    <h5 class="card-title">Flan casero</h5>
+                                    <p class="card-text">Flan casero con caramelo</p>
+                                    <p class="card-text"><small class="text-muted">3.50€</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="vinos">
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100">
+                                <img src="https://placehold.co/300x200" class="card-img-top" alt="Vino tinto">
+                                <div class="card-body">
+                                    <h5 class="card-title">Vino tinto Rioja</h5>
+                                    <p class="card-text">Crianza D.O. Rioja</p>
+                                    <p class="card-text"><small class="text-muted">15.95€</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="py-5">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-5">Galería</h2>
+            <div class="row g-4">
+                <div class="col-md-4"><img src="https://placehold.co/400x300" class="img-fluid rounded" alt="Galería"></div>
+                <div class="col-md-4"><img src="https://placehold.co/400x300" class="img-fluid rounded" alt="Galería"></div>
+                <div class="col-md-4"><img src="https://placehold.co/400x300" class="img-fluid rounded" alt="Galería"></div>
+                <!-- Más imágenes aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Opiniones -->
+    <section id="opiniones" class="py-5 bg-light">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-5">Opiniones</h2>
+            <div id="opinionesCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card text-center mx-auto" style="max-width: 600px;">
+                            <div class="card-body">
+                                <h5 class="card-title">María García</h5>
+                                <div class="mb-2">
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                    <i class="bi bi-star-fill text-warning"></i>
+                                </div>
+                                <p class="card-text">"Excelente comida y servicio. Las croquetas son las mejores que he probado."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#opinionesCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+            
+            <!-- Formulario de opiniones -->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title text-center mb-4">Deja tu opinión</h4>
+                            <form id="opinionForm" class="needs-validation" novalidate>
+                                <div class="mb-3">
+                                    <label for="nombreOpinion" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombreOpinion" required>
+                                    <div class="invalid-feedback">Por favor, introduce tu nombre.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Puntuación</label>
+                                    <div class="rating">
+                                        <i class="bi bi-star fs-4 star-rating" data-rating="1"></i>
+                                        <i class="bi bi-star fs-4 star-rating" data-rating="2"></i>
+                                        <i class="bi bi-star fs-4 star-rating" data-rating="3"></i>
+                                        <i class="bi bi-star fs-4 star-rating" data-rating="4"></i>
+                                        <i class="bi bi-star fs-4 star-rating" data-rating="5"></i>
+                                    </div>
+                                    <input type="hidden" id="puntuacion" value="0" required>
+                                    <div class="invalid-feedback">Por favor, selecciona una puntuación.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="comentario" class="form-label">Comentario</label>
+                                    <textarea class="form-control" id="comentario" rows="3" required></textarea>
+                                    <div class="invalid-feedback">Por favor, escribe tu comentario.</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Enviar opinión</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservas -->
+    <section id="reservas" class="py-5">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-5">Reserva tu mesa</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                            <div class="invalid-feedback">Por favor, introduce tu nombre.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">Por favor, introduce un email válido.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="personas" class="form-label">Número de personas</label>
+                            <select class="form-select" id="personas" required>
+                                <option value="">Selecciona...</option>
+                                <option value="1">1 persona</option>
+                                <option value="2">2 personas</option>
+                                <option value="3">3 personas</option>
+                                <option value="4">4 personas</option>
+                                <option value="5">5 o más personas</option>
+                            </select>
+                            <div class="invalid-feedback">Por favor, selecciona el número de personas.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fecha" class="form-label">Fecha</label>
+                            <input type="date" class="form-control" id="fecha" required>
+                            <div class="invalid-feedback">Por favor, selecciona una fecha.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hora" class="form-label">Hora</label>
+                            <input type="time" class="form-control" id="hora" required>
+                            <div class="invalid-feedback">Por favor, selecciona una hora.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="comentarios" class="form-label">Comentarios adicionales</label>
+                            <textarea class="form-control" id="comentarios" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Reservar ahora</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-5 bg-light">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center mb-5">Contacto</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4>Ubicación</h4>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.67890!2d-0.0!3d0.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMDDCsDAwJzAwLjAiTiAwMMKwMDAnMDAuMCJX!5e0!3m2!1ses!2ses!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h4>Información de contacto</h4>
+                    <p><i class="bi bi-geo-alt-fill"></i> Calle Flor de Papel, Sevilla</p>
+                    <p><i class="bi bi-telephone-fill"></i> +34 123 456 789</p>
+                    <p><i class="bi bi-envelope-fill"></i> info@hermanosceballos.com</p>
+                    <h4 class="mt-4">Horario</h4>
+                    <p>Lunes a Viernes: 13:00 - 00:00</p>
+                    <p>Sábados y Domingos: 13:00 - 00:00</p>
+                    <div class="mt-4">
+                        <a href="#" class="me-3 text-dark"><i class="bi bi-facebook fs-4"></i></a>
+                        <a href="#" class="me-3 text-dark"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="me-3 text-dark"><i class="bi bi-tiktok fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#inicio" class="text-light text-decoration-none">Inicio</a></li>
+                        <li><a href="#menu" class="text-light text-decoration-none">Menú</a></li>
+                        <li><a href="#reservas" class="text-light text-decoration-none">Reservas</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Legal</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Aviso de privacidad</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Términos y condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Contacto</h5>
+                    <p class="mb-0">Teléfono: +34 123 456 789</p>
+                    <p>Email: info@hermanosceballos.com</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center mb-0">© 2025 Hermanos Ceballos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
